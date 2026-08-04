@@ -1,0 +1,12 @@
+*{
+    background-color: aquamarine;
+    color: black;
+}
+
+.buttons{
+    margin: 4vw;
+    background-color: rgb(169, 149, 188);
+    padding: 2vw 3vw;
+    border-radius: 1vw;
+    border: none;
+}
