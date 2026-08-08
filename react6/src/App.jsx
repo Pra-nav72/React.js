@@ -7,6 +7,7 @@ import ButtonPrimary from './components/ButtonPrimary'
 import FruitCard from './components/FruitCard'
 import StudentCard from './components/StudentCard'
 import ProfilePic from './components/ProfilePic'
+import ChildrenProps from './components/ChildrenProps'
 
 function App() {
 
@@ -47,6 +48,19 @@ function App() {
         width: "13rem",
         height: "13rem",
        }}/>}/>
+
+      {/* Props as children */}
+       <ChildrenProps>
+        {/* everything written here can be accessed as: props.children */}
+
+        {/* children of ChildrenProps element */}
+        <h1>Children of the elements: </h1>
+        <h1>This is child1 of the element</h1>
+        <h1>This is child2 of the element</h1>
+        <img src={reactLogo} alt="logo1" />
+        <img src={viteLogo} alt="logo2" />
+        <img src={heroImg} alt="logo3" />
+       </ChildrenProps>
     </div>
   )
 }
