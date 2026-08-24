@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
-const Timer = () => {
-    const [timeLeft, setTimeLeft] = useState(66);
+const Timer = ({over}) => {
+    const [timeLeft, setTimeLeft] = useState(10);
     const [displayTime, setDisplayTime] = useState();
 
     // for timer
@@ -21,6 +21,10 @@ const Timer = () => {
 
     // for formatting the time
     useEffect(()=>{
+        if(timeLeft === 0){
+            // coming from parent to, when true result will be displayed
+            over(true)
+        }
         const timeFormat = (`${(Math.floor(timeLeft / 60)).toString().padStart(2, 0)} : ${(timeLeft % 60).toString().padStart(2, 0)}`)
 
         setDisplayTime(timeFormat)
