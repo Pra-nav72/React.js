@@ -2,6 +2,7 @@
 import { use, useState } from 'react'
 import './App.css'
 import PopUp from './assets/components/PopUp'
+import NavBar from './assets/components/NavBar';
 
 function App() {
   const [deletePopup, setDeletePopup] = useState(false);
@@ -11,6 +12,8 @@ function App() {
   return (
 
    <div >
+    <NavBar />
+
     <div className="min-h-screen flex items-center justify-center">
 
         <button onClick={()=>{setDeletePopup(true)}}
