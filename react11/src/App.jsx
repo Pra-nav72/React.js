@@ -4,6 +4,7 @@ import './App.css'
 import MultipleInputField from './components/MultipleInputField'
 import CheckBox from './components/CheckBox'
 import FormHandle from './components/FormHandle'
+import RadioButton from './components/RadioButton'
 
 function App() {
   const [inputField, setInputField] = useState('')
@@ -21,6 +22,8 @@ function App() {
       <CheckBox />
       <br />
       <FormHandle />
+      <br />
+      <RadioButton />
     </>
   )
 }
