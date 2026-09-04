@@ -10,6 +10,28 @@ const CheckBox = () => {
     javascript: false
   });
 
+  /*        FOR SELECT ALL       */
+
+  // for select-all: we need to store the values of above Object into an array for mapping.
+  // stores the all the values of each field of object isSubject
+  // const arrayOfObjectValues = Object.values(isSubject);  // output: [false, false, false]
+
+  // 'every()' returns a single boolean value if all the values inside the array is true; Boolean means truthy value
+  const arrayOfObjectValues = Object.values(isSubject).every(Boolean);  // output: false
+  
+  function handleSelectAll(e) {
+    setIsSubject({css: e.target.checked, html: e.target.checked, javascript: e.target.checked})
+    // if(e.target.checked){
+    //   setIsSubject({css:true, html: true, javascript: true})
+    // }
+    // else{
+    //   setIsSubject({css:false, html: false, javascript: false})
+    // }
+    
+  }
+
+
+
   //handle grouping
   function handleSubject(e) {
     const {name, checked} = e.target;
@@ -17,8 +39,11 @@ const CheckBox = () => {
         ...isSubject,
         [name]: checked
     })
-  }
-  return (
+  } 
+
+
+
+   return (
     <div style={{ backgroundColor: "cyan", color: "black", userSelect: 'none'}}>
       <h1>Handling Checkboxes in React</h1>
 
@@ -38,6 +63,9 @@ const CheckBox = () => {
         <br /><br />
       <h2>Multiple checkboxes as a group</h2>
       <div style={{userSelect:'none'}}>
+        <label htmlFor="sa">
+            <input type="checkbox" name="sa" id="sa" checked={arrayOfObjectValues} onChange={handleSelectAll}/>Select All
+        </label>
         <label htmlFor="html">
             <input type="checkbox" name="html" id="html" checked={isSubject.html} onChange={handleSubject}/>HTML
         </label>
