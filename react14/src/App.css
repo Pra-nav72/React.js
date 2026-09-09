@@ -1,0 +1,23 @@
+body, html{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Base styles for all NavLinks */
+.link {
+  text-decoration: none;
+  font-size: large;
+  color: #e5ebf3; /* Gray color */
+  transition: color 0.2s ease;
+}
+
+/* Active style applied automatically by React Router */
+.link.active {
+  color: #f48b0b; /* Blue color */
+  font-weight: bold;
+}
+
+.link:hover{
+    color: red;
+}
