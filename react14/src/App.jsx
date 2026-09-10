@@ -9,6 +9,8 @@ import Home from './components/Home'
 import About from './components/About'
 import Contacts from './components/Contacts'
 import ContactDetails from './components/ContactDetails'
+import Founders from './components/Founders'
+import Company from './components/Company'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -18,7 +20,14 @@ function App() {
       <Navbar />
       <Routes>
         <Route path='/' element={<Home />}/>
-        <Route path='/about' element={<About />} />
+
+        {/* Nested Routing: /about/child */}
+        <Route path='/about' element={<About />}>
+          <Route path='founder' element={<Founders />} />
+          <Route path='company' element={<Company />} />
+        </Route>
+
+
         <Route path='/contacts' element={<Contacts />} />
         {/* dynamic routing */}
         <Route path='/contacts/:id' element={<ContactDetails />}/>
